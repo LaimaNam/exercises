@@ -13,56 +13,6 @@ const fizzBuzz = () => {
   }
 };
 
-// problem: half of a square 5x5
-/*
-#####
-####
-###
-##
-#
-*/
-
-const lineOfHashs = (size) => {
-  let str = "";
-  for (row = 1; row <= size; row++) {
-    str = str + "#";
-  }
-  return str;
-};
-
-const squareOfHashs = (size) => {
-  let str = "";
-
-  for (row = 1; row <= size; row++) {
-    for (i = 1; i <= size - row; i++) {
-      str = str + "#";
-    }
-    str = str + "\n";
-  }
-  return str;
-};
-
-/*
-# 1
-## 2 
-### 3
-#### 4
-### 3
-## 2
-# 1
- */
-
-const triangle = () => {
-  let str = "";
-  for (row = 1; row <= 4; row++) {
-    for (i = 1; i <= 4 - (4 - row); i++) {
-      str = str + "#";
-    }
-    str = str + "\n";
-  }
-  return str;
-};
-
 /*Chessboard
 Write a program that creates a string that represents an 8×8 grid, 
 using newline characters to separate lines. 
@@ -81,8 +31,8 @@ Passing this string to console.log should show something like this:
 */
 
 const hashChessBoard = () => {
+  let str = "";
   for (line = 1; line < 9; line++) {
-    let str = "";
     for (cell = 1; cell < 9; cell++) {
       if (line % 2 == cell % 2) {
         str = str + " ";
@@ -90,6 +40,7 @@ const hashChessBoard = () => {
         str = str + "#";
       }
     }
+    str = str + "\n";
   }
   return str;
 };
@@ -103,9 +54,9 @@ width and height.
 
 const hashChessBoard2 = () => {
   let size = 10;
+  let str = "";
 
   for (line = 0; line < size; line++) {
-    let str = "";
     for (cell = 0; cell < size; cell++) {
       if (line % 2 == 0) {
         if (cell % 2 == 0) {
@@ -121,8 +72,9 @@ const hashChessBoard2 = () => {
         }
       }
     }
-    console.log(str);
+    str = str + "\n";
   }
+  return str;
 };
 
 // FUNCTIONS
@@ -158,7 +110,7 @@ const isEven = (num) => {
 };
 
 // Write a function countBs that takes a string as its only argument
-// and returns a number that indicates how many uppercase “B” characters
+// and returns a number that indicates how many specific characters
 // there are in the string.
 
 const countBs = (string) => {
@@ -272,7 +224,6 @@ const reverseArray = (someArray) => {
   return newArray;
 };
 console.log(reverseArray(["A", "B", "C", "D", "E"]));
-// → ["C", "B", "A"];
 
 // different approach
 const reverseArray2 = (someArray) => {
@@ -288,10 +239,10 @@ const reverseArray2 = (someArray) => {
 };
 
 console.log(reverseArray2(["A", "B", "C", "D", "E"]));
-// → ["C", "B", "A"];
 
 // reverseArrayInPlace, does what the reverse method does:
-// it modifies the array given as argument by reversing its elements. without creating new array
+// it modifies the array given as argument by reversing its elements. without creating new array.
+
 const reverseArrayInPlace = (array) => {
   let lengthOfArray = array.length;
   // for(){
