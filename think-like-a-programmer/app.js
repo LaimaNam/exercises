@@ -124,9 +124,9 @@ const luhnAlgo = (num) => {
 
   let reversedArrr = newarr.reverse();
   let sumOfNum = sum(reversedArrr);
-  reversedArrr.push(sumOfNum);
-  reversedArrr = reversedArrr.join("");
-  return reversedArrr;
+  arrOfNum.push(sumOfNum);
+  arrOfNum = arrOfNum.join("");
+  return arrOfNum;
 };
 
 console.log(luhnAlgo(1111));
