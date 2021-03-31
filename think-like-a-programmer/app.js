@@ -80,7 +80,7 @@ console.log(triangle());
 Luhn algorithm: write a program that takes an identification number of arbitrary length
 and determines wether the number is valid under the Luhn formula.
 First: 
-- COMPUTING check DIGIT of a given number to understant the  L algorithm 
+- COMPUTING check DIGIT of a given number to understand the  L algorithm 
 */
 
 // 1--------- func which doubles and sums num
@@ -106,6 +106,7 @@ const sum = (arrayOfNums) => {
   return 10 - (sumOfNum % 10);
 };
 
+// func where everything gets done
 const luhnAlgo = (num) => {
   let arrOfNum = Array.from(String(num), Number);
   let arrLength = arrOfNum.length;
@@ -113,8 +114,6 @@ const luhnAlgo = (num) => {
   let sumOfNum = 0;
 
   for (i = 0; i < arrLength; i++) {
-    // 1 -  which digits to double? (every second from right to left,
-    // first digit is always 1)
     let digit = arrOfNum[arrLength - i - 1];
     if (i % 2 === 0) {
       let dig = doubleDigit(digit);
@@ -124,14 +123,10 @@ const luhnAlgo = (num) => {
     }
   }
 
-  console.log(newarr + " " + "naujas supushint'as");
   let reversedArrr = newarr.reverse();
-  console.log(reversedArrr + " " + "koks turi but ");
   sumOfNum = sum(reversedArrr);
   reversedArrr.push(sumOfNum);
-  console.log(num + " " + "pradinis");
-  console.log(sumOfNum);
-
+  reversedArrr = reversedArrr.join();
   return reversedArrr;
 };
 
