@@ -126,7 +126,7 @@ const luhnAlgo = (num) => {
   let reversedArrr = newarr.reverse();
   sumOfNum = sum(reversedArrr);
   reversedArrr.push(sumOfNum);
-  reversedArrr = reversedArrr.join();
+  reversedArrr = reversedArrr.join("");
   return reversedArrr;
 };
 
