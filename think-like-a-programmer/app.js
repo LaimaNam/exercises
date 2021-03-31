@@ -111,7 +111,6 @@ const luhnAlgo = (num) => {
   let arrOfNum = Array.from(String(num), Number);
   let arrLength = arrOfNum.length;
   let newarr = [];
-  let sumOfNum = 0;
 
   for (i = 0; i < arrLength; i++) {
     let digit = arrOfNum[arrLength - i - 1];
@@ -124,7 +123,7 @@ const luhnAlgo = (num) => {
   }
 
   let reversedArrr = newarr.reverse();
-  sumOfNum = sum(reversedArrr);
+  let sumOfNum = sum(reversedArrr);
   reversedArrr.push(sumOfNum);
   reversedArrr = reversedArrr.join("");
   return reversedArrr;
