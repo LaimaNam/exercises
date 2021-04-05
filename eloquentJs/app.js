@@ -223,7 +223,7 @@ const reverseArray = (someArray) => {
   }
   return newArray;
 };
-console.log(reverseArray(["A", "B", "C", "D", "E"]));
+console.log(reverseArray([1, 2, 3, 4, 5]));
 
 // different approach
 const reverseArray2 = (someArray) => {
@@ -234,24 +234,33 @@ const reverseArray2 = (someArray) => {
     let newItem = someArray[x];
     newArray.push(newItem);
   }
-  console.log(someArray);
+  // console.log(someArray);
   return newArray;
 };
 
 console.log(reverseArray2(["A", "B", "C", "D", "E"]));
 
 // reverseArrayInPlace, does what the reverse method does:
-// it modifies the array given as argument by reversing its elements. without creating new array.
+// it modifies the array given as argument by reversing its elements.
+// without creating new array.
 
 const reverseArrayInPlace = (array) => {
   let lengthOfArray = array.length;
-  // for(){
+  // iterate over half of array
+  // sukeist 0 su last
+  // sukeist 1 su last - 1
+  // sukeist 2 su last - 2 ir tt
+  for (i = 0; i < Math.floor(lengthOfArray / 2); i++) {
+    let lastElement = lengthOfArray - i - 1;
+    let arr = array[i];
+    console.log("i =" + i + "  lastElement=" + lastElement + "   arr=" + arr);
+    array[i] = array[lastElement];
+    array[lastElement] = arr;
+  }
 
-  // }
-  // return array;
+  return array;
 };
 
-let arrayValue = [1, 2, 3, 4, 5];
+let arrayValue = [10, 20, 30, 40, 50, 60, 70];
 reverseArrayInPlace(arrayValue);
 console.log(arrayValue);
-// → [5, 4, 3, 2, 1]
