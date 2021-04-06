@@ -264,3 +264,6 @@ const reverseArrayInPlace = (array) => {
 let arrayValue = [10, 20, 30, 40, 50, 60, 70];
 reverseArrayInPlace(arrayValue);
 console.log(arrayValue);
+
+// Write a function arrayToList that builds up
+// a list structure like the one shown when given [1, 2, 3] as argument.
