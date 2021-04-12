@@ -86,6 +86,16 @@ const hashChessBoard2 = () => {
 //   if (a < b) return a;
 //   else return b;
 // }
+const promptFunc = () => {
+  let n1 = prompt("Write any number", "0");
+  let n2 = prompt("Write any number", "0");
+  let num1 = parseInt(n1);
+  let num2 = parseInt(n2);
+
+  let minNum = min(num1, num2);
+  // console.log(`Your min number is ${minNum}`);
+  document.getElementById("funcMin").innerHTML = `Your min number is ${minNum}`;
+};
 
 const min = (num1, num2) => {
   if (num1 < num2) {
@@ -267,3 +277,73 @@ console.log(arrayValue);
 
 // Write a function arrayToList that builds up
 // a list structure like the one shown when given [1, 2, 3] as argument.
+/* let list = {
+  value: 1,
+  rest: {
+    value: 2,
+    rest: {
+      value: 3,
+      rest: null
+    }
+  }
+};*/
+
+const arrayToList = (array) => {
+  let element = null;
+  for (let i = array.length - 1; i >= 0; i--) {
+    let newElement = { value: array[i], rest: element };
+    element = newElement;
+  }
+  return element;
+};
+
+console.log(arrayToList([10, 20, 30, 4, 50, 60, 70, 80, 90]));
+
+// write a listToArray function that produces an array from a list.
+
+let list = {
+  value: 1,
+  rest: {
+    value: 2,
+    rest: {
+      value: 3,
+      rest: {
+        value: 4,
+        rest: {
+          value: 5,
+          rest: null,
+        },
+      },
+    },
+  },
+};
+const listToArray = (inputList) => {
+  console.log("LOOOOOOOOOOOOOOOOOOL");
+  let array = [];
+  let i = 0;
+  let currentListStart = inputList;
+
+  while (currentListStart != null) {
+    array[i] = currentListStart.value;
+    currentListStart = currentListStart.rest;
+    i++;
+  }
+
+  return array;
+};
+
+console.log(listToArray(list));
+
+// add a helper function prepend, which takes an element
+// and a list and creates a new list that adds the element to the front of the input list
+const prepend = (list, element) => {
+  list = { value: element, rest: list };
+  return list;
+};
+console.log(prepend(list, 10));
+
+// nth, which takes a list and a number and returns the element at the given
+// position in the list (with zero referring to the first element)
+// or undefined when there is no such element.
+
+// recursive version of nth
