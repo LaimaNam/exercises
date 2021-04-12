@@ -171,7 +171,7 @@ const luhnChecksumFormula = (numbers) => {
     let digit = findCheckDigit(newarr);
     array.push(digit);
     array = array.join("");
-    return `Your check digit is incorrect so I made new one: ${array}`;
+    return `Your check digit is incorrect so I made new one(but maybe number you gave is incorrect, so..its your problem now): ${array}`;
   }
 };
 console.log(luhnChecksumFormula(11114));
