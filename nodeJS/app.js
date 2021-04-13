@@ -1,11 +1,6 @@
 // file system module
 const fs = require("fs");
 const folderName = process.argv[2] || "Project";
-// async version
-// fs.mkdir("Dogs", { recursive: true }, (err) => {
-//   console.log("in the callback");
-//   if (err) throw err;
-// });
 
 fs.mkdirSync(folderName);
 try {
